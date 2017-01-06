@@ -7,6 +7,6 @@ urlpatterns = [
     url(r'^$', home, name='home'),
     url(r'^inscricao/', include('eventex.subscriptions.urls',
                                 namespace='subscriptions')),
-    url(r'^palestrantes/(?P<slug>[\w-]+)/$', speaker_detail),
+    url(r'^palestrantes/(?P<slug>[\w-]+)/$', speaker_detail, name='speaker_detail'),
     url(r'^admin/', include(admin.site.urls)),
 ]
