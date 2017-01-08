@@ -11,3 +11,8 @@ def home(request):
 def speaker_detail(request, slug):
     speaker = get_object_or_404(Speaker, slug=slug)
     return render(request, 'core/speaker_detail.html', {'speaker': speaker})
+
+
+def talk_list(request):
+    from django.http import HttpResponse
+    return HttpResponse()
