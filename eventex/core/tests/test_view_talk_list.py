@@ -1,15 +1,22 @@
 from django.shortcuts import resolve_url as r
 from django.test import TestCase
 
-from eventex.core.models import Talk
+from eventex.core.models import Talk, Speaker
 
 
 class TalkListGet(TestCase):
     def setUp(self):
-        Talk.objects.create(title='Título da Palestra', start='10:00',
-                            description='Descrição da Palestra.')
-        Talk.objects.create(title='Título da Palestra', start='13:00',
-                            description='Descrição da Palestra.')
+        t1 = Talk.objects.create(title='Título da Palestra', start='10:00',
+                                 description='Descrição da Palestra.')
+        t2 = Talk.objects.create(title='Título da Palestra', start='13:00',
+                                 description='Descrição da Palestra.')
+
+        speaker = Speaker.objects.create(name='Moises Meirelles',
+                                         slug='moises-meirelles',
+                                         website='http://mshmeirelles.me')
+
+        t1.speakers.add(speaker)
+        t2.speakers.add(speaker)
 
         self.resp = self.client.get(r('talk_list'))
 
@@ -39,3 +46,11 @@ class TalkListGet(TestCase):
         for key in variables:
             with self.subTest():
                 self.assertIn(key, self.resp.context)
+
+
+class TalkListGetEmpty(TestCase):
+    def test_get_empty(self):
+        response = self.client.get(r('talk_list'))
+
+        self.assertContains(response, 'Ainda não existem palestras de manhã.')
+        self.assertContains(response, 'Ainda não existem palestras de tarde.')
