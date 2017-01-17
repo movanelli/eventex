@@ -11,7 +11,7 @@ class TalkListGet(TestCase):
         t2 = Talk.objects.create(title='Título da Palestra', start='13:00',
                                  description='Descrição da Palestra.')
         c1 = Course.objects.create(title='Título do Curso', start='09:00',
-                                   description='Descrição do curso.', slots=20)
+                                      description='Descrição do curso.', slots=20)
 
         speaker = Speaker.objects.create(name='Moises Meirelles',
                                          slug='moises-meirelles',
