@@ -2,8 +2,8 @@
 
 Sistema de Eventos encomendado pela Morena.
 
-[![Build Status](https://travis-ci.org/mshmeirelles/eventex.svg?branch=master)](https://travis-ci.org/mshmeirelles/eventex)
-[![Code Health](https://landscape.io/github/mshmeirelles/eventex/master/landscape.svg?style=flat)](https://landscape.io/github/mshmeirelles/eventex/master)
+[![Build Status](https://travis-ci.org/moshemeirelles/eventex.svg?branch=master)](https://travis-ci.org/mshmeirelles/eventex)
+[![Code Health](https://landscape.io/github/moshemeirelles/eventex/master/landscape.svg?style=flat)](https://landscape.io/github/mshmeirelles/eventex/master)
 
 ## Como desenvolver?
 
